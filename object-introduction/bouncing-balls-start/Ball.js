@@ -1,18 +1,11 @@
-// 小球模型
-class Ball{
+// 小球模型 继承 Shape
+class Ball extends Shape{
 
-    x;
-    y; // 小球的坐标
-    velX;
-    velY;// 小球水平和竖直速度
     color; //小球的颜色
     size; //小球的大小
   
-    constructor(x, y, velX, velY, color, size){
-      this.x = x;
-      this.y = y;
-      this.velX = velX;
-      this.velY = velY;
+    constructor(x, y, velX, velY,exists, color, size){
+      super(x, y, velX, velY, exists)
       this.color = color;
       this.size  = size;
     }
@@ -50,9 +43,9 @@ class Ball{
      */
     collisionDetect(balls){
         for(let i = 0; i < balls.length; i++){
-            //小球不是当前球
+            // 小球不是当前球
             if(this !== balls[i]){
-                //计算两个圆之间的距离 x y 差 平方 后 开根号
+                // 计算两个圆之间的距离 x y 差 平方 后 开根号
                 let distance = Math.sqrt(Math.pow(balls[i].x - this.x, 2) + Math.pow(balls[i].y - this.y, 2));
                 // 如果二者距离小于二者半径之和，则小球碰撞，应当变色。
                 if (distance < this.size + balls[i].size){
@@ -61,4 +54,5 @@ class Ball{
             }
         }
     }
+
   }

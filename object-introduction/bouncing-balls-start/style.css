@@ -12,7 +12,7 @@ body {
   height: inherit;
 }
 
-h1 {
+h1{
   font-size: 2rem;
   letter-spacing: -1px;
   position: absolute;
@@ -22,4 +22,16 @@ h1 {
 
   color: transparent;
   text-shadow: 0 0 4px white;
+}
+
+
+h6{
+  font-size: 1rem;
+  letter-spacing: -1px;
+  position: absolute;
+  margin: 0;
+  top: 50px;
+  right: 5px;
+
+  color: #aaa;
 }
